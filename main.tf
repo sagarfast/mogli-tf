@@ -8,8 +8,8 @@ resource "aws_instance" "my-insta" {
   associate_public_ip_address = true
   key_name = "ohio-new"
   security_groups = ["defaults"]
-  subnet_id = ["defaults"]
   
+
   ebs_block_device {
     device_name = "/dev/sdf"
     volume_size = 10

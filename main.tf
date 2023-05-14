@@ -10,11 +10,11 @@ resource "aws_instance" "my-insta" {
   security_groups = ["defaults"]
 
 resource "aws_instance" "my-insta" {
-  vpc_id     = aws_vpc.my-insta.id
+  vpc_id     = aws_instance.my-insta.id
   cidr_block = "10.0.1.0/24"
 
   tags = {
-    Name = "main"
+    Name = "my-insta"
   }
 }
   ebs_block_device {

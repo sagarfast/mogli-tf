@@ -8,15 +8,8 @@ resource "aws_instance" "my-insta" {
   associate_public_ip_address = true
   key_name = "ohio-new"
   security_groups = ["defaults"]
-
-resource "aws_subnet" "my-insta" {
-  vpc_id     = aws_vpc.my-insta.id
-  cidr_block = "10.0.1.0/24"
-
-  tags = {
-    Name = "my-insta"
-  }
-}
+  subnet_id = ["defaults"]
+  
   ebs_block_device {
     device_name = "/dev/sdf"
     volume_size = 10

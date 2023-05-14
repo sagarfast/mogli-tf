@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "my-insta" {
   ami           = "ami-08333bccc35d71140"
   instance_type = "t2.micro"
-  subnet_id = "anytrue"
+  subnet_id = "defaults"
   associate_public_ip_address = true
   key_name = "ohio-new"
   security_groups = ["defaults"]

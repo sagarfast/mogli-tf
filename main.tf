@@ -5,11 +5,18 @@ provider "aws" {
 resource "aws_instance" "my-insta" {
   ami           = "ami-08333bccc35d71140"
   instance_type = "t2.micro"
-  subnet_id = "defaults"
   associate_public_ip_address = true
   key_name = "ohio-new"
   security_groups = ["defaults"]
 
+resource "aws_subnet" "main" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "Main"
+  }
+}
   ebs_block_device {
     device_name = "/dev/sdf"
     volume_size = 10

@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-east-2"
 }
 
-resource "aws_instance" "web" {
+resource "aws_instance" "my-insta" {
   ami           = "ami-08333bccc35d71140"
   instance_type = "t2.micro"
   associate_public_ip_address = true

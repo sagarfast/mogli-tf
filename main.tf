@@ -11,7 +11,6 @@ resource "aws_instance" "my-insta" {
   vpc_security_group_ids = [aws_security_group.this.id]
 
   root_block_device {
-    device_name = "/dev/sdf"
     volume_size = 10
     volume_type = "gp2"
   }

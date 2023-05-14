@@ -9,12 +9,12 @@ resource "aws_instance" "my-insta" {
   key_name = "ohio-new"
   security_groups = ["defaults"]
 
-resource "aws_instance" "my-insta" {
-  vpc_id     = aws_instance.my-insta.id
+resource "aws_subnet" "my-insta" {
+  vpc_id     = aws_vpc.my-insta.id
   cidr_block = "10.0.1.0/24"
 
   tags = {
-    Name = "my-insta"
+    Name = "main"
   }
 }
   ebs_block_device {

@@ -6,7 +6,7 @@ resource "aws_instance" "my-insta" {
   ami           = "ami-08333bccc35d71140"
   instance_type = "t2.micro"
   associate_public_ip_address = true
-  key_name = "tom-new"
+  key_name = "sagar"
   security_groups = ["sg-00c07de1ba6fa6eaf"]
   vpc_security_group_ids = [aws_security_group.this.id]
   subnet_id = "subnet-00f8785a30c977f96"

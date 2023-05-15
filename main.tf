@@ -12,14 +12,14 @@ resource "aws_instance" "my-insta" {
   subnet_id = "subnet-00f8785a30c977f96"
     
     user_data = <<EOF
-  #!/bin/bash
-  sudo yum update -y
-  sudo yum install httpd -y
-  sudo touch /var/www/html/index.html
-  sudo echo "welcome to hello world $(hostname)" > /var/www/html/index.html
-  sudo systemctl start httpd
-  sudo systemctl enable httpd
-  EOF
+#!/bin/bash
+sudo yum update -y
+sudo yum install httpd -y
+sudo touch /var/www/html/index.html
+sudo echo "welcome to hello world $(hostname)" > /var/www/html/index.html
+sudo systemctl start httpd
+sudo systemctl enable httpd
+EOF
 
   root_block_device {
     volume_size = 10

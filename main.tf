@@ -11,8 +11,8 @@ resource "aws_instance" "my-insta" {
   vpc_security_group_ids = [aws_security_group.this.id]
   subnet_id = "subnet-00f8785a30c977f96"
     
-    user_data =  "${file("install_script.sh")}"
-
+    user_data =  file("${path.module}/script.sh")
+    
   root_block_device {
     volume_size = 10
     volume_type = "gp2"
